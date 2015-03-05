@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Range multiple with svg fill</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="range.css">
+    <link rel="stylesheet" href="skin.css">
+  </head>
+
+  <body>
+
+    <range></range>
+
+    <script src="range.tag" type="riot/tag"></script>
+    <script src="https://cdn.jsdelivr.net/g/riot@2.0(riot.min.js+compiler.min.js)"></script>
+
+    <script>
+    riot.mount('range', {
+      legend: 'temperature',
+      min: -30,
+      max: 80,
+      step: 1,
+      units: '°C',
+      lowPoint: true,
+      lowToggle: true,
+      lowAdjective: ['over', 'under'],
+      low: 2,
+      combinator: ['and', 'or'],
+      highPoint: true,
+      highToggle: true,
+      highAdjective: ['under', 'over'],
+      high: 33,
+      invertToggle: true,
+      invert: 0
+    })
+    </script>
+  </body>
+</html>

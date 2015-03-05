@@ -1,0 +1,65 @@
+/* Required styles */
+
+.range-multiple {
+  display: inline-block;
+  position: relative;
+}
+.range-background {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.range-track {
+  fill: #666;
+}
+.range-track-min-low,
+.range-track-low-high,
+.range-track-high-max {
+  fill: #ff5500;
+}
+.range-multiple input {
+  -webkit-appearance: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+  margin: 0;
+  background: none;
+}
+.range-multiple input + input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Ugh, these will probably break sometime in the future, but it's all we have for now */
+.range-multiple input[type=range]::-webkit-slider-thumb {
+  pointer-events: all;
+}
+.range-multiple input[type=range]::-moz-range-thumb {
+  pointer-events: all;
+}
+.range-multiple input[type=range]::-ms-thumb {
+  pointer-events: all;
+}
+.range-multiple input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+}
+.range-multiple input[type=range]::-moz-range-track {
+  background: none;
+}
+.range-multiple input[type=range]::-ms-track {
+  background: none;
+}
+.range-multiple input[type=range]::-ms-fill-lower {
+  background: none;
+}
+.range-multiple input[type=range]::-ms-fill-upper {
+  background: none;
+}
