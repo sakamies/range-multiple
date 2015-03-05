@@ -7,3 +7,6 @@ I'm using riot.js just because it had so little boilerplate to make something de
 The only caveat in the code is that Riot or Chrome choked on the viewbox (required for the range visualization to work) attribute, so I'm setting that in the init/mount function, instead of in the template.
 
 TODO: More readme. :)
+  - Using native elements, accessibility angle and getting stuff for free
+  - SVG to get value scaling for free, without math
+  - Stuff stuff stuff
