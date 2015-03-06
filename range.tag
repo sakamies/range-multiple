@@ -38,6 +38,7 @@
     </svg>
 
     <input if={lowPoint} id="range-low" type="range" value="{low}" min="{min}" max="{max}" step="{step}" oninput={input} name="low">
+
     <input if={highPoint} id="range-high" type="range" value="{high}" min="{min}" max="{max}" step="{step}" oninput={input} name="high">
 
   </div>
@@ -91,7 +92,15 @@
     input(e) {
       var value = e.target.value;
       var name = e.target.name;
+      var low = parseInt(this['low']);
+      var high = parseInt(this['high']);
       this[name] = value;
+      if (name == 'low' && low > high) {
+        this['high'] = this['low'];
+      }
+      if (name == 'high' && high < low) {
+        this['low'] = this['high'];
+      }
     }
 
     toggle(e) {
