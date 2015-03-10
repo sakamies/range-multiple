@@ -18,20 +18,16 @@
       <path
         class="range-track"
         d="M{min},0 L{min},100 L{max},100 L{max},0 Z"
-        fill="gray"
       ></path>
-      <path
-        if={((highPoint || lowPoint) && !invert)}
+      <path if={((highPoint || lowPoint) && !invert)}
         class="range-track-low-high"
         d="M{low},0 L{low},100 L{high},100 L{high},0 Z"
       ></path>
-      <path
-        if={(lowPoint && invert) || (!lowPoint && highPoint && !invert)}
+      <path if={(lowPoint && invert) || (!lowPoint && highPoint && !invert)}
         class="range-track-min-low"
         d="M{min},0 L{min},100 L{low},100 L{low},0 Z"
       ></path>
-      <path
-        if={(highPoint && invert) || (!highPoint && lowPoint && !invert )}
+      <path if={(highPoint && invert) || (!highPoint && lowPoint && !invert )}
         class="range-track-high-max"
         d="M{high},0 L{high},100 L{max},100 L{max},0 Z"
       ></path>
@@ -83,8 +79,9 @@
     this.invertToggle = opts.invertToggle;
     this.invert = opts.invert;
 
+
+    //HACK: Riot or Chrome choked on the viewbox attribute in html, so setting it here and not in the html
     this.on('mount', function() {
-      //Riot or Chrome choked on the viewbox attribute, so setting it later
       var viewboxAttr = this.min + ' 0 ' + (this.max - this.min) + ' 100';
       this['range-background'].setAttribute('viewBox', viewboxAttr);
     })
