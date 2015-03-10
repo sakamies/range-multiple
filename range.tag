@@ -92,9 +92,13 @@
     input(e) {
       var value = e.target.value;
       var name = e.target.name;
-      var low = parseInt(this['low']);
-      var high = parseInt(this['high']);
+      var low;
+      var high;
       this[name] = value;
+
+      //Make sure you can't flip the low & high points by dragging
+      low = parseInt(this['low']);
+      high = parseInt(this['high']);
       if (name == 'low' && low > high) {
         this['high'] = this['low'];
       }
